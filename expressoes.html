@@ -21,49 +21,47 @@
 
 </head>
 <body>
-    Digite um CPF: <input type="text" id="cpf">
-    <button onclick="Validar();"> OK </button>
+    Digite um CPF <input onkeyup="Validar();" type="text" id="cpf">
+   <br>
 
-    Digite um Telefone: <input type="text" id="telefone">
-    <button onclick="Validar();"> OK </button>
+    Digite um Telefone <input onkeyup="ValidarTelefone();" type="text" id="telefone">
+   <br>
 
-    Digite um CEP: <input type="text" id="cep">
-    <button onclick="Validar();"> OK </button>
+    Digite um CEP: <input onkeyup="ValidarCEP();" type="text" id="cep">
+   
 </body>
 
 <script>
     function Validar()
     {
-        expressao = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g ;
+        expressao = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
         texto = cpf.value
         resposta = expressao.test(texto) ;
         if(resposta == false)
         {
-            cpf.classlist.remove('certo');
-            cpf.classlist.add('errado');
+            cpf.classList.remove('certo');
+            cpf.classList.add('errado');
         }
         if(resposta == true)
         {
-            cpf.classlist.remove('errado');
-            cpf.classlist.add('certo');
+            cpf.classList.remove('errado');
+            cpf.classList.add('certo');
         }
     }
     function ValidarTelefone()
     {
-       expressao = /^\([0-9]{2}\) [0-9] [0-9]{4}-[0-9]{4}$/g;
-
-
+        expressao = /^\([0-9]{2}\) [0-9] [0-9]{4}-[0-9]{4}$/g;
         texto = telefone.value
         resposta = expressao.test(texto) ;
         if(resposta == false)
         {
-            telefone.classlist.remove('certo');
-            telefone.classlist.add('errado');
+            telefone.classList.remove('certo');
+            telefone.classList.add('errado');
         }
         if(resposta == true)
         {
-            telefone.classlist.remove('errado');
-            telefone.classlist.add('certo');
+            telefone.classList.remove('errado');
+            telefone.classList.add('certo');
         }
     }
     function ValidarCEP()
@@ -73,13 +71,13 @@
         resposta = expressao.test(texto) ;
         if(resposta == false)
         {
-            cep.classlist.remove('certo');
-            cep.classlist.add('errado');
+            cep.classList.remove('certo');
+            cep.classList.add('errado');
         }
         if(resposta == true)
         {
-            cep.classlist.remove('errado');
-            cep.classlist.add('certo');
+            cep.classList.remove('errado');
+            cep.classList.add('certo');
         }
     }
 </script>
